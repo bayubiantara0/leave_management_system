@@ -31,8 +31,8 @@ Ikuti langkah-langkah berikut untuk mengatur proyek di komputer lokal Anda:
 1.  **Clone Repository**
 
     ```bash
-    git clone <repository-url>
-    cd project-test
+    git clone https://github.com/bayubiantara0/leave_management_system.git
+    cd leave_management_system
     ```
 
 2.  **Setup Backend**
