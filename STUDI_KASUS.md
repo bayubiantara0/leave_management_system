@@ -1,7 +1,5 @@
 # Studi Kasus: Sistem Manajemen Cuti (Leave Management System) - Final Project
 
-**PT Uwu Jump Indonesia**
-
 Dokumen ini menjelaskan implementasi teknis dan alur bisnis dari aplikasi Sistem Manajemen Cuti yang telah selesai dikembangkan. Aplikasi ini dirancang untuk mempermudah proses pengajuan, persetujuan, dan pelacakan cuti karyawan secara digital, aman, dan efisien.
 
 ---
