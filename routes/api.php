@@ -13,6 +13,7 @@ Route::prefix('v1')->group(function () {
 
         Route::apiResource('roles', \App\Http\Controllers\Api\RoleController::class);
         Route::apiResource('permissions', \App\Http\Controllers\Api\PermissionController::class);
+        Route::apiResource('employees', \App\Http\Controllers\Api\EmployeeController::class);
         Route::apiResource('departments', \App\Http\Controllers\Api\DepartmentController::class);
         Route::apiResource('users', \App\Http\Controllers\Api\UserController::class);
         

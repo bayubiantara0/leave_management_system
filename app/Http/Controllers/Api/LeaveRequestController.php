@@ -51,11 +51,16 @@ class LeaveRequestController extends Controller
         $daysCount = $startDate->diffInDays($endDate) + 1;
 
         $user = $request->user();
+        
+        // Ensure employee record exists
+        if (!$user->employee) {
+             return response()->json(['message' => 'Employee data not found.'], 404);
+        }
 
-        if ($user->leave_balance < $daysCount) {
+        if ($user->employee->leave_balance < $daysCount) {
             return response()->json([
                 'message' => 'Insufficient leave balance.',
-                'current_balance' => $user->leave_balance,
+                'current_balance' => $user->employee->leave_balance,
                 'requested_days' => $daysCount
             ], 422);
         }
@@ -106,8 +111,10 @@ class LeaveRequestController extends Controller
 
             if ($request->status === 'approved') {
                 $user = $leave->user;
-                $user->leave_balance -= $leave->days_count;
-                $user->save();
+                if ($user->employee) {
+                    $user->employee->leave_balance -= $leave->days_count;
+                    $user->employee->save();
+                }
             }
         });
 

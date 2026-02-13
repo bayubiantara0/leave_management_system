@@ -9,6 +9,8 @@ import DepartmentList from "./pages/Departments/DepartmentList";
 import DepartmentForm from "./pages/Departments/DepartmentForm";
 import UserList from "./pages/Users/UserList";
 import UserForm from "./pages/Users/UserForm";
+import EmployeeList from "./pages/Employees/EmployeeList";
+import EmployeeForm from "./pages/Employees/EmployeeForm";
 import LeaveList from "./pages/Leaves/LeaveList";
 import LeaveForm from "./pages/Leaves/LeaveForm";
 import LeaveApproval from "./pages/Leaves/LeaveApproval";
@@ -61,6 +63,38 @@ const Main: React.FC = () => {
                                 <Route
                                     path="/departments/:id/edit"
                                     element={<DepartmentForm />}
+                                />
+                            </Route>
+
+                            {/* Employees */}
+                            <Route
+                                element={
+                                    <ProtectedRoute requiredPermission="view_users" />
+                                }
+                            >
+                                <Route
+                                    path="/employees"
+                                    element={<EmployeeList />}
+                                />
+                            </Route>
+                            <Route
+                                element={
+                                    <ProtectedRoute requiredPermission="create_users" />
+                                }
+                            >
+                                <Route
+                                    path="/employees/create"
+                                    element={<EmployeeForm />}
+                                />
+                            </Route>
+                            <Route
+                                element={
+                                    <ProtectedRoute requiredPermission="edit_users" />
+                                }
+                            >
+                                <Route
+                                    path="/employees/:id/edit"
+                                    element={<EmployeeForm />}
                                 />
                             </Route>
 

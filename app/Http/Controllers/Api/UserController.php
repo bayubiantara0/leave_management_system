@@ -21,7 +21,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::with(['roles', 'department'])->get();
+        $users = User::with(['roles', 'employee.department'])->get();
         return response()->json(['users' => $users]);
     }
 
@@ -32,29 +32,25 @@ class UserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' => ['required', 'exists:roles,name'],
-            'department_id' => ['nullable', 'exists:departments,id'],
-            'nik' => ['nullable', 'string', 'unique:users,nik'],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'department_id' => $request->department_id,
-            'nik' => $request->nik,
         ]);
 
         $user->assignRole($request->role);
 
         return response()->json([
             'message' => 'User created successfully',
-            'user' => $user->load(['roles', 'department'])
+            'user' => $user->load(['roles', 'employee.department'])
         ], 201);
     }
 
     public function show($id)
     {
-        $user = User::with(['roles', 'department'])->findOrFail($id);
+        $user = User::with(['roles', 'employee.department'])->findOrFail($id);
         return response()->json(['user' => $user]);
     }
 
@@ -67,15 +63,11 @@ class UserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'role' => ['required', 'exists:roles,name'],
             'password' => ['nullable', 'string', 'min:8', 'confirmed'],
-            'department_id' => ['nullable', 'exists:departments,id'],
-            'nik' => ['nullable', 'string', Rule::unique('users', 'nik')->ignore($user->id)],
         ]);
 
         $userData = [
             'name' => $request->name,
             'email' => $request->email,
-            'department_id' => $request->department_id,
-            'nik' => $request->nik,
         ];
 
         if ($request->filled('password')) {
@@ -88,7 +80,7 @@ class UserController extends Controller
 
         return response()->json([
             'message' => 'User updated successfully',
-            'user' => $user->load(['roles', 'department'])
+            'user' => $user->load(['roles', 'employee.department'])
         ]);
     }
 

@@ -11,7 +11,7 @@
  Target Server Version : 80403 (8.4.3)
  File Encoding         : 65001
 
- Date: 13/02/2026 11:10:37
+ Date: 13/02/2026 12:06:17
 */
 
 SET NAMES utf8mb4;
@@ -32,7 +32,9 @@ CREATE TABLE `cache`  (
 -- ----------------------------
 -- Records of cache
 -- ----------------------------
-INSERT INTO `cache` VALUES ('laravel-cache-spatie.permission.cache', 'a:3:{s:5:\"alias\";a:4:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";}s:11:\"permissions\";a:23:{i:0;a:4:{s:1:\"a\";i:1;s:1:\"b\";s:18:\"access_master_data\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:1;a:4:{s:1:\"a\";i:2;s:1:\"b\";s:23:\"access_role_permissions\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:2;a:4:{s:1:\"a\";i:3;s:1:\"b\";s:10:\"view_users\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:3;a:4:{s:1:\"a\";i:4;s:1:\"b\";s:12:\"create_users\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:4;a:4:{s:1:\"a\";i:5;s:1:\"b\";s:10:\"edit_users\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:5;a:4:{s:1:\"a\";i:6;s:1:\"b\";s:12:\"delete_users\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:6;a:4:{s:1:\"a\";i:7;s:1:\"b\";s:10:\"view_roles\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:7;a:4:{s:1:\"a\";i:8;s:1:\"b\";s:12:\"create_roles\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:8;a:4:{s:1:\"a\";i:9;s:1:\"b\";s:10:\"edit_roles\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:9;a:4:{s:1:\"a\";i:10;s:1:\"b\";s:12:\"delete_roles\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:10;a:4:{s:1:\"a\";i:11;s:1:\"b\";s:16:\"view_permissions\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:11;a:4:{s:1:\"a\";i:12;s:1:\"b\";s:18:\"create_permissions\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:12;a:4:{s:1:\"a\";i:13;s:1:\"b\";s:16:\"edit_permissions\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:13;a:4:{s:1:\"a\";i:14;s:1:\"b\";s:18:\"delete_permissions\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:14;a:4:{s:1:\"a\";i:15;s:1:\"b\";s:15:\"view_own_leaves\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:3;}}i:15;a:4:{s:1:\"a\";i:16;s:1:\"b\";s:15:\"view_all_leaves\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:16;a:4:{s:1:\"a\";i:17;s:1:\"b\";s:13:\"create_leaves\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:3;}}i:17;a:4:{s:1:\"a\";i:18;s:1:\"b\";s:14:\"approve_leaves\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:18;a:4:{s:1:\"a\";i:19;s:1:\"b\";s:16:\"view_departments\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:19;a:4:{s:1:\"a\";i:20;s:1:\"b\";s:18:\"create_departments\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:20;a:4:{s:1:\"a\";i:21;s:1:\"b\";s:16:\"edit_departments\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:21;a:4:{s:1:\"a\";i:22;s:1:\"b\";s:18:\"delete_departments\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:22;a:4:{s:1:\"a\";i:23;s:1:\"b\";s:14:\"view_dashboard\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:3;}}}s:5:\"roles\";a:2:{i:0;a:3:{s:1:\"a\";i:1;s:1:\"b\";s:5:\"admin\";s:1:\"c\";s:3:\"web\";}i:1;a:3:{s:1:\"a\";i:3;s:1:\"b\";s:8:\"employee\";s:1:\"c\";s:3:\"web\";}}}', 1771041131);
+INSERT INTO `cache` VALUES ('laravel-cache-spatie.permission.cache', 'a:3:{s:5:\"alias\";a:4:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";}s:11:\"permissions\";a:23:{i:0;a:4:{s:1:\"a\";i:1;s:1:\"b\";s:18:\"access_master_data\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:1;a:4:{s:1:\"a\";i:2;s:1:\"b\";s:23:\"access_role_permissions\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:2;a:4:{s:1:\"a\";i:3;s:1:\"b\";s:10:\"view_users\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:3;a:4:{s:1:\"a\";i:4;s:1:\"b\";s:12:\"create_users\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:4;a:4:{s:1:\"a\";i:5;s:1:\"b\";s:10:\"edit_users\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:5;a:4:{s:1:\"a\";i:6;s:1:\"b\";s:12:\"delete_users\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:6;a:4:{s:1:\"a\";i:7;s:1:\"b\";s:10:\"view_roles\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:7;a:4:{s:1:\"a\";i:8;s:1:\"b\";s:12:\"create_roles\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:8;a:4:{s:1:\"a\";i:9;s:1:\"b\";s:10:\"edit_roles\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:9;a:4:{s:1:\"a\";i:10;s:1:\"b\";s:12:\"delete_roles\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:10;a:4:{s:1:\"a\";i:11;s:1:\"b\";s:16:\"view_permissions\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:11;a:4:{s:1:\"a\";i:12;s:1:\"b\";s:18:\"create_permissions\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:12;a:4:{s:1:\"a\";i:13;s:1:\"b\";s:16:\"edit_permissions\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:13;a:4:{s:1:\"a\";i:14;s:1:\"b\";s:18:\"delete_permissions\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:14;a:4:{s:1:\"a\";i:15;s:1:\"b\";s:15:\"view_own_leaves\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:3;}}i:15;a:4:{s:1:\"a\";i:16;s:1:\"b\";s:15:\"view_all_leaves\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:16;a:4:{s:1:\"a\";i:17;s:1:\"b\";s:13:\"create_leaves\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:3;}}i:17;a:4:{s:1:\"a\";i:18;s:1:\"b\";s:14:\"approve_leaves\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:18;a:4:{s:1:\"a\";i:19;s:1:\"b\";s:16:\"view_departments\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:19;a:4:{s:1:\"a\";i:20;s:1:\"b\";s:18:\"create_departments\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:20;a:4:{s:1:\"a\";i:21;s:1:\"b\";s:16:\"edit_departments\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:21;a:4:{s:1:\"a\";i:22;s:1:\"b\";s:18:\"delete_departments\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:1;}}i:22;a:4:{s:1:\"a\";i:23;s:1:\"b\";s:14:\"view_dashboard\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:3;}}}s:5:\"roles\";a:2:{i:0;a:3:{s:1:\"a\";i:1;s:1:\"b\";s:5:\"admin\";s:1:\"c\";s:3:\"web\";}i:1;a:3:{s:1:\"a\";i:3;s:1:\"b\";s:8:\"employee\";s:1:\"c\";s:3:\"web\";}}}', 1771044906);
+INSERT INTO `cache` VALUES ('laravel-cache-user@user.com|127.0.0.1', 'i:2;', 1770958760);
+INSERT INTO `cache` VALUES ('laravel-cache-user@user.com|127.0.0.1:timer', 'i:1770958760;', 1770958760);
 
 -- ----------------------------
 -- Table structure for cache_locks
@@ -72,6 +74,36 @@ INSERT INTO `departments` VALUES (2, 'Cutting', 'CUT', '2026-02-12 09:12:42', '2
 INSERT INTO `departments` VALUES (3, 'Finishing', 'FIN', '2026-02-12 09:12:42', '2026-02-12 09:12:42');
 INSERT INTO `departments` VALUES (4, 'Quality Assurance', 'QA', '2026-02-12 09:12:42', '2026-02-12 09:12:42');
 INSERT INTO `departments` VALUES (5, 'test', 'test', '2026-02-13 03:15:28', '2026-02-13 03:15:28');
+
+-- ----------------------------
+-- Table structure for employees
+-- ----------------------------
+DROP TABLE IF EXISTS `employees`;
+CREATE TABLE `employees`  (
+  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` bigint UNSIGNED NOT NULL,
+  `department_id` bigint UNSIGNED NULL DEFAULT NULL,
+  `nik` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
+  `leave_balance` int NOT NULL DEFAULT 12,
+  `date_of_joining` date NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `employees_nik_unique`(`nik` ASC) USING BTREE,
+  INDEX `employees_user_id_foreign`(`user_id` ASC) USING BTREE,
+  INDEX `employees_department_id_foreign`(`department_id` ASC) USING BTREE,
+  CONSTRAINT `employees_department_id_foreign` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`) ON DELETE SET NULL ON UPDATE RESTRICT,
+  CONSTRAINT `employees_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of employees
+-- ----------------------------
+INSERT INTO `employees` VALUES (1, 3, 1, 'ADM001', 'Administrator', NULL, NULL, 12, NULL, '2026-02-13 04:47:32', '2026-02-13 04:47:32');
+INSERT INTO `employees` VALUES (2, 4, 1, 'EMP001', 'Staff', NULL, NULL, 12, NULL, '2026-02-13 04:47:32', '2026-02-13 04:47:32');
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -153,13 +185,14 @@ CREATE TABLE `leave_requests`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `leave_requests_user_id_foreign`(`user_id` ASC) USING BTREE,
   CONSTRAINT `leave_requests_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of leave_requests
 -- ----------------------------
 INSERT INTO `leave_requests` VALUES (1, 4, '2026-02-14', '2026-02-14', 'test', 'approved', 1, NULL, '2026-02-13 03:52:26', '2026-02-13 03:57:08');
 INSERT INTO `leave_requests` VALUES (2, 4, '2026-02-17', '2026-02-17', 'test', 'rejected', 1, NULL, '2026-02-13 03:58:15', '2026-02-13 04:00:12');
+INSERT INTO `leave_requests` VALUES (3, 4, '2026-02-23', '2026-02-25', 'test', 'pending', 3, NULL, '2026-02-13 05:04:05', '2026-02-13 05:04:05');
 
 -- ----------------------------
 -- Table structure for migrations
@@ -170,7 +203,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of migrations
@@ -183,6 +216,8 @@ INSERT INTO `migrations` VALUES (5, '2026_02_12_083419_create_permission_tables'
 INSERT INTO `migrations` VALUES (6, '2026_02_12_090040_create_departments_table', 1);
 INSERT INTO `migrations` VALUES (7, '2026_02_12_090042_add_details_to_users_table', 1);
 INSERT INTO `migrations` VALUES (8, '2026_02_12_090045_create_leave_requests_table', 1);
+INSERT INTO `migrations` VALUES (9, '2026_02_13_044613_create_employees_table', 2);
+INSERT INTO `migrations` VALUES (10, '2026_02_13_044616_modify_users_table_drop_columns', 2);
 
 -- ----------------------------
 -- Table structure for model_has_permissions
@@ -297,14 +332,14 @@ CREATE TABLE `personal_access_tokens`  (
   UNIQUE INDEX `personal_access_tokens_token_unique`(`token` ASC) USING BTREE,
   INDEX `personal_access_tokens_tokenable_type_tokenable_id_index`(`tokenable_type` ASC, `tokenable_id` ASC) USING BTREE,
   INDEX `personal_access_tokens_expires_at_index`(`expires_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of personal_access_tokens
 -- ----------------------------
 INSERT INTO `personal_access_tokens` VALUES (1, 'App\\Models\\User', 1, 'auth_token', '5b5ac32e0077855e13c2d52d72cf2c7396bdea76ac81bab89109e91fa0538474', '[\"*\"]', NULL, NULL, '2026-02-13 02:37:46', '2026-02-13 02:37:46');
 INSERT INTO `personal_access_tokens` VALUES (2, 'App\\Models\\User', 1, 'auth_token', '723f3ceaf41b9bea7d34508953b3c567bc9ee31944c6ee9375f5e17ab4b03ddb', '[\"*\"]', NULL, NULL, '2026-02-13 02:38:48', '2026-02-13 02:38:48');
-INSERT INTO `personal_access_tokens` VALUES (19, 'App\\Models\\User', 1, 'auth_token', '86923f25240208648abb7afaa7e1e2b800f79365f85257223de160edc9e46570', '[\"*\"]', NULL, NULL, '2026-02-13 04:02:44', '2026-02-13 04:02:44');
+INSERT INTO `personal_access_tokens` VALUES (24, 'App\\Models\\User', 1, 'auth_token', 'fe884f260bd73fb2147c8ab83da63936371e28d631c0837df05d2ba61d2aaaab', '[\"*\"]', '2026-02-13 05:05:04', NULL, '2026-02-13 05:04:10', '2026-02-13 05:05:04');
 
 -- ----------------------------
 -- Table structure for role_has_permissions
@@ -396,28 +431,22 @@ CREATE TABLE `sessions`  (
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nik` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `department_id` bigint UNSIGNED NULL DEFAULT NULL,
-  `leave_balance` int NOT NULL DEFAULT 12,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `users_email_unique`(`email` ASC) USING BTREE,
-  UNIQUE INDEX `users_nik_unique`(`nik` ASC) USING BTREE,
-  INDEX `users_department_id_foreign`(`department_id` ASC) USING BTREE,
-  CONSTRAINT `users_department_id_foreign` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`) ON DELETE SET NULL ON UPDATE RESTRICT
+  UNIQUE INDEX `users_email_unique`(`email` ASC) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, NULL, 'Administrator', 'admin@admin.com', NULL, 12, '2026-02-12 09:12:43', '$2y$12$mToPIM6h9WXJ7YAjxv/qbOHMOTv3KIlEq9ugn40f2r.iNFVfsTWYK', NULL, '2026-02-12 09:12:43', '2026-02-12 09:12:43');
-INSERT INTO `users` VALUES (3, NULL, 'Admin User', 'admin@example.com', 1, 12, NULL, '$2y$12$RxJ1qF87j/IDtQK0D76Hwe2LtC6zWx.0kS4hF5DkznAuT3A4558uu', NULL, '2026-02-13 03:51:38', '2026-02-13 03:51:38');
-INSERT INTO `users` VALUES (4, NULL, 'Regular Employee', 'employee@example.com', 1, 11, NULL, '$2y$12$DtlmOwg.REZ1CdVdlMmXO.8oM6FAKV49CovNPh3T4wuc5Yv9ghmRG', NULL, '2026-02-13 03:51:38', '2026-02-13 03:57:08');
+INSERT INTO `users` VALUES (1, 'Administrator', 'admin@admin.com', '2026-02-12 09:12:43', '$2y$12$mToPIM6h9WXJ7YAjxv/qbOHMOTv3KIlEq9ugn40f2r.iNFVfsTWYK', NULL, '2026-02-12 09:12:43', '2026-02-12 09:12:43');
+INSERT INTO `users` VALUES (3, 'Admin User', 'admin@example.com', NULL, '$2y$12$RxJ1qF87j/IDtQK0D76Hwe2LtC6zWx.0kS4hF5DkznAuT3A4558uu', NULL, '2026-02-13 03:51:38', '2026-02-13 03:51:38');
+INSERT INTO `users` VALUES (4, 'Regular Employee', 'employee@example.com', NULL, '$2y$12$2Ia3Mf22ok5Odv.M//sC0OW17J6Q15oe3WF3OTcUPit4zWUiHvQe6', NULL, '2026-02-13 03:51:38', '2026-02-13 04:59:27');
 
 SET FOREIGN_KEY_CHECKS = 1;

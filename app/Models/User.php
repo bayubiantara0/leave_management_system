@@ -20,11 +20,8 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'nik',
         'name',
         'email',
-        'department_id',
-        'leave_balance',
         'password',
     ];
 
@@ -51,9 +48,9 @@ class User extends Authenticatable
         ];
     }
 
-    public function department()
+    public function employee()
     {
-        return $this->belongsTo(Department::class);
+        return $this->hasOne(Employee::class);
     }
 
     public function leaveRequests(): \Illuminate\Database\Eloquent\Relations\HasMany

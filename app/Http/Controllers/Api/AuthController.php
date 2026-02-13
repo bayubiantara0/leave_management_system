@@ -58,8 +58,8 @@ class AuthController extends Controller
             $permissions = $user->getAllPermissions()->pluck('name');
             $role = $user->getRoleNames()->first();
             
-            // Prepare complete user data including department
-            $user->load('department');
+            // Prepare complete user data including employee and department
+            $user->load(['employee.department']);
             $userData = $user->toArray();
             $userData['role'] = $role;
             $userData['permissions'] = $permissions;
@@ -84,7 +84,7 @@ class AuthController extends Controller
     public function me(Request $request)
     {
         $user = $request->user();
-        $user->load('department'); // Ensure department is loaded
+        $user->load(['employee.department']); // Ensure employee and department is loaded
         
         $permissions = $user->getAllPermissions()->pluck('name');
         $role = $user->getRoleNames()->first();

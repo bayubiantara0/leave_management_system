@@ -630,6 +630,149 @@
                     "response": []
                 }
             ]
+        },
+        {
+            "name": "Employees",
+            "item": [
+                {
+                    "name": "List Employees",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/employees",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "employees"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Employee",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"New Employee\",\n    \"email\": \"new.employee@example.com\",\n    \"password\": \"password\",\n    \"role\": \"employee\",\n    \"nik\": \"EMP009\",\n    \"department_id\": 1,\n    \"position\": \"Staff\",\n    \"leave_balance\": 12,\n    \"phone\": \"081234567890\",\n    \"address\": \"Jl. Sudirman No 10\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/employees",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "employees"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Single Employee",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/employees/1",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "employees", "1"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Employee",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Updated Employee Name\",\n    \"email\": \"updated.employee@example.com\",\n    \"role\": \"employee\",\n    \"nik\": \"EMP009-UPD\",\n    \"department_id\": 1,\n    \"position\": \"Senior Staff\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/employees/1",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "employees", "1"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Employee",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/employees/1",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "employees", "1"]
+                        }
+                    },
+                    "response": []
+                }
+            ]
         }
     ],
     "variable": [

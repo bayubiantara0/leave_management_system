@@ -50,21 +50,35 @@ class RolePermissionSeeder extends Seeder
             [
                 'name' => 'Admin User',
                 'password' => Hash::make('password'),
-                'department_id' => 1,
-                'leave_balance' => 12
             ]
         );
         $admin->assignRole($adminRole);
+        
+        if (!$admin->employee) {
+            $admin->employee()->create([
+                'nik' => 'ADM001',
+                'department_id' => 1,
+                'leave_balance' => 12,
+                'position' => 'Administrator',
+            ]);
+        }
 
         $employee = User::firstOrCreate(
             ['email' => 'employee@example.com'],
             [
                 'name' => 'Regular Employee',
                 'password' => Hash::make('password'),
-                'department_id' => 1,
-                'leave_balance' => 12
             ]
         );
         $employee->assignRole($employeeRole);
+
+        if (!$employee->employee) {
+            $employee->employee()->create([
+                'nik' => 'EMP001',
+                'department_id' => 1,
+                'leave_balance' => 12,
+                'position' => 'Staff',
+            ]);
+        }
     }
 }

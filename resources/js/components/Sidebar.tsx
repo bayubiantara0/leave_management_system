@@ -17,7 +17,19 @@ const Sidebar: React.FC = () => {
     const { pathname } = useLocation();
     const { logout, user } = useAuth();
 
-    const groupedNavItems = [
+    interface NavItem {
+        name: string;
+        path: string;
+        icon: React.ElementType;
+        permission?: string;
+    }
+
+    interface NavGroup {
+        group: string;
+        items: NavItem[];
+    }
+
+    const groupedNavItems: NavGroup[] = [
         {
             group: "Main",
             items: [{ name: "Dashboard", path: "/", icon: LayoutDashboard }],
@@ -49,9 +61,15 @@ const Sidebar: React.FC = () => {
                     permission: "view_departments",
                 },
                 {
-                    name: "Users",
-                    path: "/users",
+                    name: "Employees",
+                    path: "/employees",
                     icon: Users,
+                    permission: "view_users", // Using view_users permission for now as it makes sense
+                },
+                {
+                    name: "Users (Account)",
+                    path: "/users",
+                    icon: Key,
                     permission: "view_users",
                 },
                 {
@@ -63,7 +81,7 @@ const Sidebar: React.FC = () => {
                 {
                     name: "Permissions",
                     path: "/permissions",
-                    icon: Key,
+                    icon: ClipboardList, // Changed icon to avoid duplicate
                     permission: "view_permissions",
                 },
             ],

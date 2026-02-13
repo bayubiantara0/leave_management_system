@@ -1,41 +1,45 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
-import { User } from "../../types";
+import { Employee } from "../../types";
 import { Edit, Trash2, Plus } from "lucide-react";
 import { toast } from "react-toastify";
 
-const UserList: React.FC = () => {
-    const [users, setUsers] = useState<User[]>([]);
+const EmployeeList: React.FC = () => {
+    const [employees, setEmployees] = useState<Employee[]>([]);
     const [loading, setLoading] = useState(true);
 
-    const fetchUsers = async () => {
+    const fetchEmployees = async () => {
         try {
-            const response = await api.get("/users");
-            setUsers(
-                response.data.users || response.data.data || response.data,
+            const response = await api.get("/employees");
+            setEmployees(
+                response.data.employees || response.data.data || response.data,
             );
         } catch (error) {
             console.error(error);
-            toast.error("Failed to fetch users");
+            toast.error("Failed to fetch employees");
         } finally {
             setLoading(false);
         }
     };
 
     useEffect(() => {
-        fetchUsers();
+        fetchEmployees();
     }, []);
 
     const handleDelete = async (id: number) => {
-        if (window.confirm("Are you sure you want to delete this user?")) {
+        if (
+            window.confirm(
+                "Are you sure you want to delete this employee? This will also delete the associated user account.",
+            )
+        ) {
             try {
-                await api.delete(`/users/${id}`);
-                toast.success("User deleted successfully");
-                fetchUsers();
+                await api.delete(`/employees/${id}`);
+                toast.success("Employee deleted successfully");
+                fetchEmployees();
             } catch (error) {
                 console.error(error);
-                toast.error("Failed to delete user");
+                toast.error("Failed to delete employee");
             }
         }
     };
@@ -45,13 +49,15 @@ const UserList: React.FC = () => {
     return (
         <div>
             <div className="flex justify-between items-center mb-6">
-                <h1 className="text-2xl font-semibold text-gray-900">Users</h1>
+                <h1 className="text-2xl font-semibold text-gray-900">
+                    Employees
+                </h1>
                 <Link
-                    to="/users/create"
+                    to="/employees/create"
                     className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                 >
                     <Plus className="mr-2 h-4 w-4" />
-                    Add User
+                    Add Employee
                 </Link>
             </div>
 
@@ -64,13 +70,13 @@ const UserList: React.FC = () => {
                                     Name
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Email
-                                </th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     NIK
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Department
+                                </th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Position
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Balance
@@ -81,33 +87,36 @@ const UserList: React.FC = () => {
                             </tr>
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
-                            {users.map((user) => (
-                                <tr key={user.id}>
+                            {employees.map((employee) => (
+                                <tr key={employee.id}>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        {user.name}
+                                        {employee.user?.name}
+                                        <div className="text-xs text-gray-500">
+                                            {employee.user?.email}
+                                        </div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                        {user.email}
+                                        {employee.nik}
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                        {user.employee?.nik || "-"}
+                                        {employee.department?.name || "-"}
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                        {user.employee?.department?.name || "-"}
+                                        {employee.position}
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                        {user.employee?.leave_balance ?? "-"}
+                                        {employee.leave_balance}
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         <Link
-                                            to={`/users/${user.id}/edit`}
+                                            to={`/employees/${employee.id}/edit`}
                                             className="text-indigo-600 hover:text-indigo-900 mr-4"
                                         >
                                             <Edit className="h-5 w-5 inline" />
                                         </Link>
                                         <button
                                             onClick={() =>
-                                                handleDelete(user.id)
+                                                handleDelete(employee.id)
                                             }
                                             className="text-red-600 hover:text-red-900"
                                         >
@@ -116,13 +125,13 @@ const UserList: React.FC = () => {
                                     </td>
                                 </tr>
                             ))}
-                            {users.length === 0 && (
+                            {employees.length === 0 && (
                                 <tr>
                                     <td
                                         colSpan={6}
                                         className="px-6 py-4 text-center text-gray-500"
                                     >
-                                        No users found.
+                                        No employees found.
                                     </td>
                                 </tr>
                             )}
@@ -134,4 +143,4 @@ const UserList: React.FC = () => {
     );
 };
 
-export default UserList;
+export default EmployeeList;

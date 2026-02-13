@@ -23,17 +23,30 @@ export interface Role {
     updated_at?: string;
 }
 
+export interface Employee {
+    id: number;
+    user_id: number;
+    department_id: number | null;
+    nik: string;
+    position: string;
+    phone: string | null;
+    address: string | null;
+    leave_balance: number;
+    date_of_joining: string | null;
+    created_at: string;
+    updated_at: string;
+    user?: User;
+    department?: Department;
+}
+
 export interface User {
     id: number;
     name: string;
     email: string;
-    role: string; // or roles[] depending on implementation
-    roles?: Role[];
+    role: string;
     permissions: string[];
-    department_id?: number;
+    employee?: Employee;
     department?: Department;
-    leave_balance?: number;
-    nik?: string;
     created_at?: string;
     updated_at?: string;
 }

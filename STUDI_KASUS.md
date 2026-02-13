@@ -84,15 +84,26 @@ Menyimpan data departemen perusahaan.
 
 - `id` (PK), `name` (e.g. HRD), `code` (e.g. DEPT-001).
 
-### B. Tabel `users` (Karyawan)
+### B. Tabel `users` (Akun Login)
 
-Menyimpan data akun login dan informasi kepegawaian.
+Menyimpan data akun login.
 
 - `id` (PK), `name`, `email`, `password`.
-- `department_id` (FK): Relasi ke tabel departments.
-- `leave_balance`: Integer (Default: 12). Menyimpan sisa cuti tahunan.
+- `created_at`, `updated_at`.
 
-### C. Tabel `leave_requests` (Transaksi)
+### C. Tabel `employees` (Profil Karyawan)
+
+Menyimpan data detail kepegawaian.
+
+- `id` (PK).
+- `user_id` (FK): Relasi ke tabel users.
+- `department_id` (FK): Relasi ke tabel departments.
+- `nik`: Nomor Induk Karyawan.
+- `position`: Jabatan.
+- `leave_balance`: Integer (Default: 12).
+- `phone`, `address`, `date_of_joining`.
+
+### D. Tabel `leave_requests` (Transaksi)
 
 Menyimpan setiap pengajuan cuti.
 
@@ -104,7 +115,7 @@ Menyimpan setiap pengajuan cuti.
 - `status`: ENUM ('pending', 'approved', 'rejected').
 - `admin_remarks`: Catatan dari admin (opsional).
 
-### D. Spatie Tables (Roles & Permissions)
+### E. Spatie Tables (Roles & Permissions)
 
 - `roles`, `permissions`, `model_has_roles`, `role_has_permissions`.
 
@@ -118,7 +129,8 @@ Menyimpan setiap pengajuan cuti.
 // LeaveRequestController.php
 $daysCount = $startDate->diffInDays($endDate) + 1;
 
-if ($user->leave_balance < $daysCount) {
+// Cek saldo di tabel employees
+if ($user->employee->leave_balance < $daysCount) {
     return response()->json(['message' => 'Saldo cuti tidak mencukupi'], 422);
 }
 ```
@@ -130,8 +142,11 @@ Saldo hanya dipotong saat status berubah menjadi **Approved**.
 ```php
 // LeaveRequestController.php
 if ($request->status === 'approved') {
-    $user->leave_balance -= $leave->days_count;
-    $user->save();
+    // Potong saldo di tabel employees
+    if ($user->employee) {
+        $user->employee->leave_balance -= $leave->days_count;
+        $user->employee->save();
+    }
 }
 ```
 

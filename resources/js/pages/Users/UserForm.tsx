@@ -3,13 +3,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import api from "../../services/api";
 import { toast } from "react-toastify";
-import { User, Department, Role } from "../../types";
+import { User, Role } from "../../types";
 import { Eye, EyeOff } from "lucide-react";
 
 interface UserFormData extends User {
     password?: string;
     password_confirmation?: string;
-    department_id: number;
+    // department_id, nik, leave_balance removed
     role: string;
 }
 
@@ -23,7 +23,7 @@ const UserForm: React.FC = () => {
         formState: { errors },
     } = useForm<UserFormData>();
     const [loading, setLoading] = useState(false);
-    const [departments, setDepartments] = useState<Department[]>([]);
+    // departments state removed
     const [roles, setRoles] = useState<Role[]>([]);
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -31,15 +31,6 @@ const UserForm: React.FC = () => {
     const isEditMode = !!id;
 
     useEffect(() => {
-        // Fetch departments
-        api.get("/departments")
-            .then((res) =>
-                setDepartments(
-                    res.data.departments || res.data.data || res.data,
-                ),
-            )
-            .catch((err) => console.error("Failed to fetch departments", err));
-
         // Fetch roles
         api.get("/roles")
             .then((res) =>
@@ -56,9 +47,9 @@ const UserForm: React.FC = () => {
                         response.data;
                     setValue("name", data.name);
                     setValue("email", data.email);
-                    setValue("nik", data.nik);
-                    setValue("department_id", data.department_id);
-                    setValue("leave_balance", data.leave_balance);
+                    // setValue("nik", data.nik); // Removed
+                    // setValue("department_id", data.department_id); // Removed
+                    // setValue("leave_balance", data.leave_balance); // Removed
 
                     // Handle role: API returns roles array, form expects single string name if simple assignment
                     const userRole =
@@ -234,46 +225,6 @@ const UserForm: React.FC = () => {
                                 {errors.password_confirmation.message}
                             </p>
                         )}
-                    </div>
-
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700">
-                            NIK (Nomor Induk Karyawan)
-                        </label>
-                        <input
-                            type="text"
-                            {...register("nik")}
-                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                        />
-                    </div>
-
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700">
-                            Department
-                        </label>
-                        <select
-                            {...register("department_id")}
-                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                        >
-                            <option value="">Select Department</option>
-                            {departments.map((dept) => (
-                                <option key={dept.id} value={dept.id}>
-                                    {dept.name}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700">
-                            Leave Balance
-                        </label>
-                        <input
-                            type="number"
-                            {...register("leave_balance")}
-                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                            defaultValue={12}
-                        />
                     </div>
 
                     <div>

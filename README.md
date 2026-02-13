@@ -222,8 +222,49 @@ Berikut adalah daftar endpoint API yang tersedia di aplikasi ini.
     ```json
     {
         "status": "approved" // atau "rejected"
+    {
+        "status": "approved" // atau "rejected"
     }
     ```
+
+### Manajemen Karyawan (Employees)
+
+#### 1. List Karyawan
+
+- **URL**: `/api/v1/employees`
+- **Method**: `GET`
+- **Headers**: `Authorization: Bearer <token>`
+
+#### 2. Buat Karyawan (Admin)
+
+- **URL**: `/api/v1/employees`
+- **Method**: `POST`
+- **Headers**: `Authorization: Bearer <token>`
+- **Body**:
+    ```json
+    {
+        "name": "New Employee",
+        "email": "new@example.com",
+        "password": "password",
+        "role": "employee",
+        "nik": "EMP002",
+        "department_id": 1,
+        "position": "Staff",
+        "leave_balance": 12
+    }
+    ```
+
+#### 3. Update Karyawan (Admin)
+
+- **URL**: `/api/v1/employees/{id}`
+- **Method**: `PUT`
+- **Headers**: `Authorization: Bearer <token>`
+
+#### 4. Hapus Karyawan (Admin)
+
+- **URL**: `/api/v1/employees/{id}`
+- **Method**: `DELETE`
+- **Headers**: `Authorization: Bearer <token>`
 
 ---
 
@@ -237,7 +278,8 @@ Berikut adalah struktur tabel dan relasi antar tabel dalam database.
 
 ### Definisi Tabel (DDL Ringkas)
 
-1.  **users**: Menyimpan data login karyawan, saldo cuti (`leave_balance`), dan relasi ke departemen (`department_id`).
-2.  **departments**: Data master departemen (Code, Name).
-3.  **leave_requests**: Transaksi pengajuan cuti. Menyimpan `start_date`, `end_date`, `status` (pending/approved/rejected), dan `days_count`.
-4.  **roles & permissions**: Tabel bawaan dari _spatie/laravel-permission_ untuk manajemen hak akses.
+1.  **users**: Menyimpan data login (email, password) dan role.
+2.  **employees**: Menyimpan data detail karyawan (`nik`, `department_id`, `position`, `leave_balance`) dengan relasi ke `users`.
+3.  **departments**: Data master departemen (Code, Name).
+4.  **leave_requests**: Transaksi pengajuan cuti.
+5.  **roles & permissions**: Manajemen hak akses (Spatie).
